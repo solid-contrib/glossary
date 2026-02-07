@@ -1,0 +1,19 @@
+body {
+    font-family:Arial,Helvetica;
+    font-size:1rem;
+    width:80ch;
+    margin:auto;
+}
+h1 { font-size:150% !important; }
+h2 { font-size:130% !important; text-decoration:underline;}
+a {text-decoration:none; color: blue !important; }
+
+*[property="skos:inScheme"],
+*[property="skos:broader"],
+*[property="skos:isTopConceptOf"]
+    { display:none }
+*[property="skos:prefLabel"] { font-weight:bold; font-size:110%; }
+*[property="skos:note"],p { padding-left:2rem; }
+
+
+#license {font-style:italic;}

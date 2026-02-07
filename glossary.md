@@ -1,6 +1,6 @@
 # Glossary of Solid Core Concepts, Terms, & Abbreviations
 
-### The audience of this glossary is the general public - people who do not necessarily have a technical background or previous experience with Solid. See the [Solid Specifications](https://solidproject.org/TR/) for definitions aimed at a technical audience. This is a work in progress. Please visit [the glossary repository](https://github.com/solid-contrib/practitioners/glossary/) to suggest changes and additions. *Note: many of the links are missing, help completing them would be much appreciated :-).* 
+### The audience of this glossary is the general public - people who do not necessarily have a technical background or previous experience with Solid. See the [Solid Specifications](https://solidproject.org/TR/) for definitions aimed at a technical audience. This is a work in progress. Please visit [the glossary repository](https://github.com/solid-contrib/glossary/) to suggest changes and additions. *Note: many of the links are missing, help completing them would be much appreciated :-).* 
 
 ## Core Concept : Community Involvement
 
@@ -24,6 +24,8 @@
 
 + PR~~ A **Pull Request** is a way of suggesting an edit to a document or piece of code. An *issue* makes suggestions about or comments on or questions about the document or code but a *PR* suggests specific changes in the document (for example, a code correction or a new paragraph for documentations).
 
++ WiP~~ **Work in Progress** is often used to describe projects that are not production ready.
+
 ## Core Concept: Decentralized Storage
 
 ### Solid gives you control of your personal data by letting you store it where you choose; by enforcing your ability to manage who accesses it; and by not requiring use of large centralized services that have their own data agendas. At the center of Solid is your Pod.
@@ -33,6 +35,8 @@
 + Pod Provider~~ A host service that provides you Pod storage space and maintains Solid Server software that enforces the privacy rules you have defined. You are free to switch pod providers at any time.
 
 + Container~~ In Solid, your data is stored in Containers which can be folders that contains files, or database tables that contains records, or storage systems. Whatever the storage, Containers can be accessed with URLs that end in a slash, for example "https://example.com/foo/bar/".
+
++ LDP~~ **Linked Data Platform** - the basis for the storage structure of containers used in Solid.
 
 + Solid Storage Server~~ The software used to provide access to Pods. It is maintained by the Pod Provider, or by you if you self-host your Pod. In either case, it enforces the access rules you set for your own Pod and serves your data in a way that makes its semantic relationships accessible. Solid Storage Servers may be standalone or combined with a Solid Identity Server or other software. The list below is not exhaustive, there are others.
 
@@ -56,7 +60,15 @@
 
 + Solid Identity Server~~ The software an Identity Provider uses to provision and validate WebID identities.
 
-+ OIDC~~ An abbreviation for **OpenIDConnect** an identity system often (but not exclusively) used by Solid Identity Providers to validate a person's identity.
++ Authn~~ short for **authentication**.  An application must first authenticate itself - prove that it is operated by who it claims to be operated by.  Then it can proceed to authorization (see Authz below) - check that the operator has the appropriate permissions.
+
++ OIDC~~ An abbreviation for **OpenIDConnect** an identity/authentication system often (but not exclusively) used by Solid Identity Providers to validate a person's identity.
+
++ OAuth~~ **Open Authorization** - the standard on which OIDC is based.
+
++ DPop~~ **Demonstrating Proof-of-Possession** - a security method that is part of the authentication flow of OIDC.
+
++ JWT~~ a **JSON Web Token** - a token passed by applications using OIDC and other authentication/authorization systems.
 
 ## Core Concept: Center the Person
 
@@ -101,12 +113,13 @@
 
 + Triple~~ A Triple is an RDF statement. RDF statements take the form of short sentences asserting that thingA is in some relationship with thingB. Each statement (triple) has three parts : a **subject** (thingA), a **predicate** (the relationship), and an **object** (thingB).
 
-+ Tiple~~ A triple you write when drunk. (sorry, couldn't resist)
-
-+ Graph~~ A set of RDF statements.  This can mean the document which contains the statements.
++ Graph~~ a **knowledge graph** is a set of RDF statements.  This can mean the document which contains the statements or statements pulled from a database or other storage.
 
 + Quad~~ A Quad is an RDF statement that includes the name of the graph or document the statement is derived from.
 
++ Prefix~~ in RDF everything has a URL and prefixes are a way to shorten URLs. Instead of typing `http://xmlns.com/foaf/0.1/name` you can define a prefix "foaf" to stand for the front part of the URL and instead type `foaf:name`.
+
++ .ttl~~ the file extension for Turtle files.
 
 ## Core Concept: Interoperable Applications
 
@@ -135,6 +148,8 @@
 + ACP~~ **Access Control Policy** is a newer more complex and more robust n access control mechanism.
 
 + ACL~~ pronounced "ackle", stands for **Access Control List**, a list of rules used in WAC to control who accesses your data.
+
++ Authz~~  short for **authorization** - the process of authorizing an application for access based, in Solid, on permission and consent rules defined by you.
 
 #### (CC BY-SA 4.0) Jeff Zucker, 2021-2026
 

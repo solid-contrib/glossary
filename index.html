@@ -96,6 +96,14 @@
     </p>
 
 
+    <p typeof="skos:Concept" about="#WiP" name="#WiP">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Community_Contributions_to_Code_&_Documentation">
+      <span property="skos:prefLabel">WiP</span> :
+      <span property="skos:definition"><strong>Work in Progress</strong> is often used to describe projects that are not production ready.</span>
+    </p>
+
+
 
   <div typeof="skos:Concept" about="#Core_Concept:_Decentralized_Storage" name="#Core_Concept:_Decentralized_Storage">
     <meta rel="skos:isTopConceptOf" href="#SolidCoreConcepts">
@@ -125,6 +133,14 @@
       <meta rel="skos:broader" href="#Core_Concept:_Decentralized_Storage">
       <span property="skos:prefLabel">Container</span> :
       <span property="skos:definition">In Solid, your data is stored in Containers which can be folders that contains files, or database tables that contains records, or storage systems. Whatever the storage, Containers can be accessed with URLs that end in a slash, for example "<a href="https://example.com/foo/bar/">https://example.com/foo/bar/</a>".</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#LDP" name="#LDP">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Decentralized_Storage">
+      <span property="skos:prefLabel">LDP</span> :
+      <span property="skos:definition"><strong>Linked Data Platform</strong> - the basis for the storage structure of containers used in Solid.</span>
     </p>
 
 
@@ -215,11 +231,43 @@
     </p>
 
 
+    <p typeof="skos:Concept" about="#Authn" name="#Authn">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Flexible_Identifies">
+      <span property="skos:prefLabel">Authn</span> :
+      <span property="skos:definition">short for <strong>authentication</strong>.  An application must first authenticate itself - prove that it is operated by who it claims to be operated by.  Then it can proceed to authorization (see Authz below) - check that the operator has the appropriate permissions.</span>
+    </p>
+
+
     <p typeof="skos:Concept" about="#OIDC" name="#OIDC">
       <meta rel="skos:inScheme" href="#SolidCoreConcepts">
       <meta rel="skos:broader" href="#Core_Concept:_Flexible_Identifies">
       <span property="skos:prefLabel">OIDC</span> :
-      <span property="skos:definition">An abbreviation for <strong>OpenIDConnect</strong> an identity system often (but not exclusively) used by Solid Identity Providers to validate a person's identity.</span>
+      <span property="skos:definition">An abbreviation for <strong>OpenIDConnect</strong> an identity/authentication system often (but not exclusively) used by Solid Identity Providers to validate a person's identity.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#OAuth" name="#OAuth">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Flexible_Identifies">
+      <span property="skos:prefLabel">OAuth</span> :
+      <span property="skos:definition"><strong>Open Authorization</strong> - the standard on which OIDC is based.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#DPop" name="#DPop">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Flexible_Identifies">
+      <span property="skos:prefLabel">DPop</span> :
+      <span property="skos:definition"><strong>Demonstrating Proof-of-Possession</strong> - a security method that is part of the authentication flow of OIDC.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#JWT" name="#JWT">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Flexible_Identifies">
+      <span property="skos:prefLabel">JWT</span> :
+      <span property="skos:definition">a <strong>JSON Web Token</strong> - a token passed by applications using OIDC and other authentication/authorization systems.</span>
     </p>
 
 
@@ -401,7 +449,7 @@
       <meta rel="skos:inScheme" href="#SolidCoreConcepts">
       <meta rel="skos:broader" href="#Core_Concept:_Semantic_Linking">
       <span property="skos:prefLabel">Graph</span> :
-      <span property="skos:definition">A set of RDF statements.  This can mean the document which contains the statements.</span>
+      <span property="skos:definition">a <strong>knowledge graph</strong> is a set of RDF statements.  This can mean the document which contains the statements or statements pulled from a database or other storage.</span>
     </p>
 
 
@@ -410,6 +458,22 @@
       <meta rel="skos:broader" href="#Core_Concept:_Semantic_Linking">
       <span property="skos:prefLabel">Quad</span> :
       <span property="skos:definition">A Quad is an RDF statement that includes the name of the graph or document the statement is derived from.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#Prefix" name="#Prefix">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Semantic_Linking">
+      <span property="skos:prefLabel">Prefix</span> :
+      <span property="skos:definition">in RDF everything has a URL and prefixes are a way to shorten URLs. Instead of typing <code>http://xmlns.com/foaf/0.1/name</code> you can define a prefix "foaf" to stand for the front part of the URL and instead type <code>foaf:name</code>.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#.ttl" name="#.ttl">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Semantic_Linking">
+      <span property="skos:prefLabel">.ttl</span> :
+      <span property="skos:definition">the file extension for Turtle files.</span>
     </p>
 
 
@@ -506,6 +570,14 @@
       <meta rel="skos:broader" href="#Core_Concept:_Consent_Based_Computing">
       <span property="skos:prefLabel">ACL</span> :
       <span property="skos:definition">pronounced "ackle", stands for <strong>Access Control List</strong>, a list of rules used in WAC to control who accesses your data.</span>
+    </p>
+
+
+    <p typeof="skos:Concept" about="#Authz" name="#Authz">
+      <meta rel="skos:inScheme" href="#SolidCoreConcepts">
+      <meta rel="skos:broader" href="#Core_Concept:_Consent_Based_Computing">
+      <span property="skos:prefLabel">Authz</span> :
+      <span property="skos:definition">short for <strong>authorization</strong> - the process of authorizing an application for access based, in Solid, on permission and consent rules defined by you.</span>
     </p>
 
 

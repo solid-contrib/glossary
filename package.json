@@ -1,0 +1,18 @@
+{
+  "name": "solid-glossary",
+  "version": "1.0.0",
+  "description": "A beginner's glossary for Solid",
+  "main": "index.html",
+  "scripts": {
+    "build": "node glossary-build | grep ERROR"
+  },
+  "keywords": ["Solid","glossary","onboarding tools"],
+  "author": "Jeff Zucker",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^28.0.0",
+    "marked": "^17.0.1",
+    "rdflib": "^2.3.5"
+  }
+}

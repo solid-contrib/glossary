@@ -2,7 +2,7 @@
 
 -- A beginner's guide to Solid.
 
-This glossary is intended for those with little or no previous experience with Solid. An [online version](https://soliproject.solidcommunity.net/glossary/index.html) is available both to humans and machines.
+This glossary is intended for those with little or no previous experience with Solid. An [online version](https://solidproject.solidcommunity.net/glossary/index.html) is available both to humans and machines.
 
 ## Contributing
 

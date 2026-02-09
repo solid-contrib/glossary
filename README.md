@@ -2,7 +2,7 @@
 
 -- A beginner's guide to Solid.
 
-This glossary is intended for those with little or no previous experience with Solid. An [online version](https://solidproject.solidcommunity.net/glossary/index.html) is available both to humans and machines.
+This glossary is intended for those with little or no previous experience with Solid. An [online version](https://solidproject.solidcommunity.net/glossary) is available both to humans and machines.
 
 ## Contributing
 
@@ -38,5 +38,13 @@ For example :
 ```
 
 Let me know if this works for you.  And if it doesn't, please get in touch with me (@jeff-zucker on the matrix chat).
+
+## Getting the RDF
+
+The glossary is created with RDFa, which means that you can retrieve full RDF for the glossary's SKOS Concept Scheme using content negotiation at the same address as the HTML page, for example 
+```
+wget --header="Accept: text/turtle" https://solidproject.solidcommunity.net/glossary
+```
+Note: there should be no trailing '/' on the URL.
 
 (c) Jeff Zucker, 2021-2026, may be freely used under and MIT license.

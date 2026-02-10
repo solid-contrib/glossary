@@ -1,39 +1,31 @@
-const $rdf = require('rdflib');
 const marked = require('marked');
 const {JSDOM} = require('jsdom');
 const fs = require('fs/promises');
 
-const store = $rdf.graph();
-const fetcher = $rdf.fetcher(store);
-
 function md2rdfa(markdownString,conceptScheme,cssPath){
   let htmlString = marked.parse(markdownString);
-  const [v,topConcepts,topics] = parse2rdfa(markdownString);
-  let termsString = "";
-  let definitionCount = 0;
-  for(const topic of topics){
-    const note = topic.note ?`\n    <p property="skos:note">${topic.note}</p>` :"";
-    let terms = "";
-    for(let d of topic.definitions){
-      definitionCount++;
-      terms += `
-    <p typeof="skos:Concept" about="#${d.url}" name="#${d.url}">
-      <meta rel="skos:inScheme" href="#${conceptScheme}">
-      <meta rel="skos:broader" href="#${topic.url}">
-      <span property="skos:prefLabel">${d.term}</span> :
-      <span property="skos:definition">${d.definition}</span>
-    </p>\n\n`;
-    }
-    termsString += `
-  <div typeof="skos:Concept" about="#${topic.url}" name="#${topic.url}">
-    <meta rel="skos:isTopConceptOf" href="#${conceptScheme}">
-    <h2 property="skos:prefLabel">${topic.label}</h2>${note}
-  </div>
+  let rdfaString = "";
+  let headerUrl = "";
+  const doc = new JSDOM(htmlString).window.document;
 
-${terms}
-`;
+  function processHeadersAndParagraphs() {
+    const headers = doc.querySelectorAll('h1, h2, h3');
+    let visited = false;
+    headers.forEach(header => {
+        const nextElement = header.nextElementSibling;
+        const head = header.textContent.trim();
+        const body = nextElement && nextElement.tagName==='P' ?nextElement.innerHTML :"";
+        if(header.tagName==='H1') rdfaString += getConceptScheme(head,body);
+        if(header.tagName==='H2'){
+          rdfaString += getTopConcept(head,body,visited);
+          headerUrl = label2url(head);
+          visited = true;
+        }
+        if(header.tagName==='H3') rdfaString += getTerm(head,body);
+    });
   }
-  const rdfaString = `
+  function getConceptScheme(head,body){
+    return `
 <!DOCTYPE html><html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
   prefix="skos: http://www.w3.org/2004/02/skos/core#"
 ><head>
@@ -42,87 +34,67 @@ ${terms}
 </head>
 <body typeof="skos:ConceptScheme" about="#${conceptScheme}" name="#${conceptScheme}">
 
-  <h1 property="skos:prefLabel">${v.schemeLabel}</h1>
-  <p property="skos:note">${v.schemeNote}</p>
-  <div id="definitions">
-    ${termsString}
-  </div>
-  <div id="license">${v.license}</div>
-
-</body></html>
-`;
-  return rdfaString;
-}
-
-function parse2rdfa(markdownString){
-  const vars = {};
-  let htmlString = marked.parse(markdownString);
-  const dom = new JSDOM(htmlString);
-  const doc = dom.window.document;
-  const schemeElement = doc.querySelector('h1')
-  vars.schemeLabel  = schemeElement.textContent;
-  vars.schemeNote = schemeElement.nextElementSibling.innerHTML.trim();
-  let license = doc.querySelector('h4');
-  vars.license = license ?license.textContent :"";
-  const defs = extractTopics(doc);
-  const topConceptElements = doc.querySelectorAll('h2');
-  let topConcepts = "";
-  for(const concept of topConceptElements){
-    topConcepts += "    "+ concept.innerHTML + ",\n";
+  <section aria-label="page heading" aria-labeledby="page-title" aria-describedby="page-description">
+    <h1 id="page-title" property="skos:prefLabel">${head}</h1>
+    <p id ="page-description" property="skos:note">${body}</p>
+  </section>
+  <dl id="definitions" aria-label="definitions" aria-role="list" inlist="">
+    `;
   }
-  topConcepts = topConcepts.trim().replace(/,$/,'.');
-  return([vars,topConcepts,defs]);
-}
-
-function extractTopics(doc){
-  const topics = doc.querySelectorAll('h2');
-  return Array.from(topics).map(topic => {
-    let nextElement = topic.nextElementSibling;
-    if (nextElement && (nextElement.tagName === 'H3' || nextElement.tagName === 'UL')) {
-      let note="";
-      let definitions=[];
-      const label = topic.textContent.trim();
-      const url = label.replace(/\s+/g,'_');
-      if(nextElement.tagName==="H3"){
-         note = nextElement.innerHTML;
-         nextElement = nextElement.nextElementSibling;
-      }
-      if(nextElement) {
-        for(let item of nextElement.querySelectorAll('li')){
-          definitions.push( extractTerm(item) );         
-        }
-      }
-      return { label, url, note, definitions, };
+  function getTopConcept(head,body,visited){
+    const url = label2url(head);
+    let dt = "";
+    if(visited) dt = `
+    </dl>
+    `;
+    dt += `
+    <dt
+      about="#${url}"
+      typeof="skos:Concept"
+      rel="skos:isTopConceptOf" resource="#${conceptScheme}"
+      property="skos:prefLabel"
+    ><dfn id="${url}">${head}</dfn></dt>
+    `;
+    if(body){
+      dt += `
+    <dd aria-labelledby="${url}">${body}</dd>
+      `;
     }
-    return null;
-  }).filter(section => section !== null);
-}
+    dt += `
+    <dl inlist="" area-role="list" rel="skos:narrower" resource="#${url}">
+    `;
+     return dt;
 
-function extractTerm(content) {
-  if(typeof content !="string") content = content.innerHTML;
-  const regex = /<p>(.*?)~~(.*?)<\/p>/
-  const match = content.match(regex);
-  if(!match){
-    console.log('EXTRACT TERM ERROR!',content);
-    return {};
-  };
-  const term = match[1].trim();
-  const definition = match[2].trim();
-  const url = label2url(term)
-  return match ?{term,definition,url } :null;
+  }
+  function getTerm(head,body){
+    const url = label2url(head);
+    if(head==='license'){
+      return `
+    </dl>
+  </dl>
+  <section id="license" aria-label="license">${body}</section>
+       `;
+    }
+    return `
+    <dt
+      about="#${url}"
+      typeof="skos:Concept"
+      rel="skos:broader" resource="#${headerUrl}"
+      property="skos:prefLabel"
+    ><dfn id="${url}">${head}</dfn></dt>
+    <dd aria-labelledby="${url}">
+      ${body}
+    </dd>
+      `;
+      // can't include this or it clobber skos:broader
+      // rel="skos:inScheme" resource="#${conceptScheme}"
+  }
+  processHeadersAndParagraphs();
+  return rdfaString;
 }
 
 function label2url(label){
   return label.replace(/\s+/g,'_');
-}
-
-function md2html(markdown,stylesheet){
-  let html = marked.parse(markdown);
-  html = `
-    <link rel=stylesheet href="${stylesheet}">
-    <div id="glossary">${html}</div>
-  `;
-  return html;
 }
 async function loadFile(path){
     let content = "";

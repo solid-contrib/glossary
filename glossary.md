@@ -6,19 +6,19 @@
 
 + The Solid Project~~ is a large, diverse, and welcoming community of visionaries, techies, and people who, regardless of their skill level, believe in the goals of Solid. We are building the Solidverse together and that includes you! The project is led by **Sir Tim Berners-Lee** (online handle **timbl**), the creator of the web, the visionary founder of the Solid Project.
 
-+ ODI~~ the [**Open Data Institute**](), a nongovernmental organization that supports open data and is the stewarding organization for Solid.  In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
++ ODI~~ the [**Open Data Institute**](), a nongovernmental organization that supports open data and is the stewarding organization for Solid.  In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](https://solidcommunity.net), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
 
 + CG~~ the [**Solid Community Group**](), a W3C community group oriented toward producing and reviewing technical reports including draft specifications. All are invited to regular virtual meetings.
 
 + LWS~~ the [**Linked Web Storage Group**](), a W3C working group preparing a standards track specification for Solid.
 
-+ PG~~ the [**Solid Practitioners Group**](), an open community hub for anyone interested in building Solid applications and services for end users and communities. All are invited to regular virtual meetings.
++ PG~~ the [**Solid Practitioners Group**](https://github.com/solid-contrib/practitioners), an open community hub for anyone interested in building Solid applications and services for end users and communities. All are invited to regular virtual meetings.
 
 + Code of Conduct~~ members of the Solid community should be free from harassment, abuse, and unwelcoming behaviors.  If you are subject of or witness to such behaviors, please report the incident to the [ODI ombudsman]().
 
 ## Core Concept: Community Contributions to Code & Documentation
 
-+ Repo~~ a **repository**, a place where code, documents, and discussions can be found. Often, but not exclusively on [**github.com**]().
++ Repo~~ a **repository**, a place where code, documents, and discussions can be found. Often, but not exclusively on [**github.com**](https://github.com).
 
 + Issue~~ An Issue is a way that anyone can suggest changes to any document or piece of code. Anyone of any skill level can submit an Issue and thus contribute to the written record of and the source code for the Solidverse. It could be about a bug, a feature request, a documentation change, or a use case description of a real world need that could be satisfied using Solid. If you have a suggestion and don't know how to create an Issue, just ask in the [chatroom]() or [forum]().
 
@@ -44,7 +44,7 @@
 
 + Pivot~~ [Pivot](https://github.com/solid-contrib/pivot) is a flavor of CSS used as the Server for [solidcommunity.net](https://solidcommunity.net), a free Pod and Identity Provider.
 
-+ ESS~~ The [**Enterprise Solid Server**]((https://www.inrupt.com/products/enterprise-wallet-infrastructure) is a combined Storage and Identity Server. It is provided by Inrupt.
++ ESS~~ The [**Enterprise Solid Server**](https://www.inrupt.com/products/enterprise-wallet-infrastructure) is a combined Storage and Identity Server. It is provided by Inrupt.
 
 + NSS~~ The [**Node Solid Server**](https://github.com/nodeSolidServer/node-solid-server) is an open source combined Storage and Identity Server.
 
@@ -109,7 +109,7 @@
 
 + Follow Your Nose~~ This is a key pattern in the Semantic Web. Since data is linked to other data using meaningful links, you can follow links of interest to you.
 
-+ Ontology~~ A vocabulary of RDF terms. This includes general vocabularies like [schema.org]() and domain-specific ontologies like [foaf]().
++ Ontology~~ A vocabulary of RDF terms. This includes general vocabularies like [schema.org](https://schema.org) and domain-specific ontologies like [foaf]().
 
 + Triple~~ A Triple is an RDF statement. RDF statements take the form of short sentences asserting that thingA is in some relationship with thingB. Each statement (triple) has three parts : a **subject** (thingA), a **predicate** (the relationship), and an **object** (thingB).
 

@@ -152,7 +152,7 @@
       property="skos:prefLabel"
     ><dfn id="Pod">Pod</dfn></dt>
     <dd aria-labelledby="Pod">
-      A personal on/offline data storage space that you control. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. Personal data includes things like social media postings - in Solid, those belong to you, not to the social media company.
+      A personal or organizational on/offline data storage space that you control. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. Personal data includes things like social media postings - in Solid, those belong to you, not to the social media company.  The term "Pod" is somewhat informal, formally a Pod is known as a <strong>storage</strong>.
     </dd>
       
     <dt
@@ -163,6 +163,16 @@
     ><dfn id="Pod_Provider">Pod Provider</dfn></dt>
     <dd aria-labelledby="Pod_Provider">
       A host service that provides you Pod storage space and maintains Solid Server software that enforces the privacy rules you have defined. You are free to switch pod providers at any time.
+    </dd>
+      
+    <dt
+      about="#Self_Hosting"
+      typeof="skos:Concept"
+      rel="skos:broader" resource="#Core_Concept:_Decentralized_Storage"
+      property="skos:prefLabel"
+    ><dfn id="Self_Hosting">Self Hosting</dfn></dt>
+    <dd aria-labelledby="Self_Hosting">
+      You can download free open source software to host a pod on your own computer.  It can be a great way to learn about Solid and if you have a 24/7 internet connection, can be a way to completely control your data locally and make it available as you choose.
     </dd>
       
     <dt
@@ -273,7 +283,7 @@
       property="skos:prefLabel"
     ><dfn id="WebID">WebID</dfn></dt>
     <dd aria-labelledby="WebID">
-      A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.
+      A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.  Two common, though definitely not exclusive ways of forming WebID URLS are by subdomain - <a href="https://YOU.example.org/">https://YOU.example.org/</a>... or by suffix - <a href="https://example.org/YOU/">https://example.org/YOU/</a> ...
     </dd>
       
     <dt

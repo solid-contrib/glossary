@@ -6,7 +6,7 @@ This glossary is intended for those with little or no previous experience with S
 
 ## Contributing
 
-The glossary is a work in progress. Anyone can contribute. You can ask a question or make a suggestion in the [chatroom](https://matrix.to/#/#solid-practitioners:matrix.org), or by raising an Issue in this repository.
+The glossary is a work in progress. Anyone can contribute. You can ask a question or make a suggestion in the [chatroom](https://matrix.to/#/#solid-practitioners:matrix.org), or by raising an [Issue]() in this repository.
 
 If you spot something you think needs fixing or a new term to add, you should either communicate it by one of the methods above or submit a Pull Request.
 
@@ -18,10 +18,16 @@ The format of the markdown should be easy to follow in glossary.md.  These are  
 
 ```
 # Glossary Title
-## Glossary Top Concept
-### Note
-#### License
-+ Term~~ Definition
+Glossary Description
+
+## Top Concept
+Top Concept Description
+
+### Term
+Term Definition
+```
+You may also use these and other markdown markup in the descriptions and definitions
+```
 [label](href)
 **text to make bold**
 *text to make italic*
@@ -29,12 +35,13 @@ The format of the markdown should be easy to follow in glossary.md.  These are  
 For example :
 ```
 # Solid Glossary
-
-### A beginners guide to Solid concepts & terms
+A beginners guide to Solid concepts & terms
 
 ## Decentralized Storage
+Rather than storing your data in proprietary silos ...
 
-+ Pod~~ a personal online/offline data storage space ... A Pod is the combination of a **storage** space and one or more WebID owners who control the space. To get a pod, try [solidcommunity.net](https://solidcommunity.net).
+### Pod
+A personal online/offline data storage space ...
 ```
 
 Let me know if this works for you.  And if it doesn't, please get in touch with me (@jeff-zucker on the matrix chat).

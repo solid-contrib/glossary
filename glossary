@@ -153,7 +153,7 @@
       property="skos:prefLabel"
     ><dfn id="Pod">Pod</dfn></dt>
     <dd aria-labelledby="Pod">
-      A personal on/offline data storage space that you control. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. Personal data includes things like social media postings - in Solid, those belong to you, not to the social media company.
+      A data storage space ontrolled by a person, group, or organization. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. The term "Pod" is an informal term for what is formally called a <strong>Solid storage</strong>, see below.  Originally the acronym PODS was used - Personal Online Data Store, but the acronym has been dropped as Pods can be used by groups and organizations as well as by persons.
     </dd>
       
     <dt
@@ -164,6 +164,16 @@
     ><dfn id="Pod_Provider">Pod Provider</dfn></dt>
     <dd aria-labelledby="Pod_Provider">
       A host service that provides you Pod storage space and maintains Solid Server software that enforces the privacy rules you have defined. You are free to switch pod providers at any time.
+    </dd>
+      
+    <dt
+      about="#Self_Hosting"
+      typeof="skos:Concept"
+      rel="skos:broader" resource="#Core_Concept:_Decentralized_Storage"
+      property="skos:prefLabel"
+    ><dfn id="Self_Hosting">Self Hosting</dfn></dt>
+    <dd aria-labelledby="Self_Hosting">
+      You can download free open source software to host a pod on your own computer.  It can be a great way to learn about Solid and if you have a 24/7 internet connection, can be a way to completely control your data locally and make it available as you choose.
     </dd>
       
     <dt
@@ -184,6 +194,16 @@
     ><dfn id="LDP">LDP</dfn></dt>
     <dd aria-labelledby="LDP">
       <strong>Linked Data Platform</strong> - the basis for the storage structure of containers used in Solid.
+    </dd>
+      
+    <dt
+      about="#Solid_Storage"
+      typeof="skos:Concept"
+      rel="skos:broader" resource="#Core_Concept:_Decentralized_Storage"
+      property="skos:prefLabel"
+    ><dfn id="Solid_Storage">Solid Storage</dfn></dt>
+    <dd aria-labelledby="Solid_Storage">
+      A data storage space associated with one or more Solid identities who can control access to the data. Informally known as a Pod.
     </dd>
       
     <dt
@@ -274,7 +294,7 @@
       property="skos:prefLabel"
     ><dfn id="WebID">WebID</dfn></dt>
     <dd aria-labelledby="WebID">
-      A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.
+      A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.  Two common, though definitely not exclusive ways of forming WebID URLS are by subdomain - <a href="https://YOU.example.org/">https://YOU.example.org/</a>... or by suffix - <a href="https://example.org/YOU/">https://example.org/YOU/</a> ...
     </dd>
       
     <dt
@@ -350,18 +370,18 @@
     </dl>
     
     <dt
-      about="#Core_Concept:_Center_the_Person"
+      about="#Core_Concept:_Center_the_Person_&_the_Organization"
       typeof="skos:Concept"
       rel="skos:isTopConceptOf" resource="#SolidCoreConcepts"
       property="skos:prefLabel"
-    ><dfn id="Core_Concept:_Center_the_Person">Core Concept: Center the Person</dfn></dt>
+    ><dfn id="Core_Concept:_Center_the_Person_&_the_Organization">Core Concept: Center the Person & the Organization</dfn></dt>
     
-    <dl inlist="" area-role="list" rel="skos:narrower" resource="#Core_Concept:_Center_the_Person">
+    <dl inlist="" area-role="list" rel="skos:narrower" resource="#Core_Concept:_Center_the_Person_&_the_Organization">
     
     <dt
       about="#Profile"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="Profile">Profile</dfn></dt>
     <dd aria-labelledby="Profile">
@@ -371,7 +391,7 @@
     <dt
       about="#WebID_Document"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="WebID_Document">WebID Document</dfn></dt>
     <dd aria-labelledby="WebID_Document">
@@ -381,7 +401,7 @@
     <dt
       about="#Extended_Profile_Document"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="Extended_Profile_Document">Extended Profile Document</dfn></dt>
     <dd aria-labelledby="Extended_Profile_Document">
@@ -391,7 +411,7 @@
     <dt
       about="#Preferences_File"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="Preferences_File">Preferences File</dfn></dt>
     <dd aria-labelledby="Preferences_File">
@@ -401,7 +421,7 @@
     <dt
       about="#Public_Type_Index"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="Public_Type_Index">Public Type Index</dfn></dt>
     <dd aria-labelledby="Public_Type_Index">
@@ -411,7 +431,7 @@
     <dt
       about="#Private_Type_Index"
       typeof="skos:Concept"
-      rel="skos:broader" resource="#Core_Concept:_Center_the_Person"
+      rel="skos:broader" resource="#Core_Concept:_Center_the_Person_&_the_Organization"
       property="skos:prefLabel"
     ><dfn id="Private_Type_Index">Private Type Index</dfn></dt>
     <dd aria-labelledby="Private_Type_Index">

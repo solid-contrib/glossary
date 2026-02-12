@@ -39,16 +39,22 @@ A **Pull Request** is a way of suggesting an edit to a document or piece of code
 Solid gives you control of your personal data by letting you store it where you choose; by enforcing your ability to manage who accesses it; and by not requiring use of large centralized services that have their own data agendas. At the center of Solid is your Pod.
 
 ### Pod
-A personal on/offline data storage space that you control. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. Personal data includes things like social media postings - in Solid, those belong to you, not to the social media company.
+A data storage space ontrolled by a person, group, or organization. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. The term "Pod" is an informal term for what is formally called a **Solid storage**, see below.  Originally the acronym PODS was used - Personal Online Data Store, but the acronym has been dropped as Pods can be used by groups and organizations as well as by persons.
 
 ### Pod Provider
 A host service that provides you Pod storage space and maintains Solid Server software that enforces the privacy rules you have defined. You are free to switch pod providers at any time.
+
+### Self Hosting
+You can download free open source software to host a pod on your own computer.  It can be a great way to learn about Solid and if you have a 24/7 internet connection, can be a way to completely control your data locally and make it available as you choose.
 
 ### Container
 In Solid, your data is stored in Containers which can be folders that contains files, or database tables that contains records, or storage systems. Whatever the storage, Containers can be accessed with URLs that end in a slash, for example "https://example.com/foo/bar/".
 
 ### LDP
 **Linked Data Platform** - the basis for the storage structure of containers used in Solid.
+
+### Solid Storage
+A data storage space associated with one or more Solid identities who can control access to the data. Informally known as a Pod.
 
 ### Solid Storage Server
 The software used to provide access to Pods. It is maintained by the Pod Provider, or by you if you self-host your Pod. In either case, it enforces the access rules you set for your own Pod and serves your data in a way that makes its semantic relationships accessible. Solid Storage Servers may be standalone or combined with a Solid Identity Server or other software. The list below is not exhaustive, there are others.
@@ -74,7 +80,7 @@ The [**PHP Solid Server**](https://github.com/pdsinterop/php-solid-server) is an
 **Single Sign On** means that logging in once gains you access to everywhere in the Solidverse that you have permission to go.
 
 ### WebID
-A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.
+A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.  Two common, though definitely not exclusive ways of forming WebID URLS are by subdomain - https://YOU.example.org/... or by suffix - https://example.org/YOU/ ...
 
 ### IdP
 An **Identity Provider** is a host service that provides Solid identity authentication. When you register with an IdP, the IdP assigns you a WebID. Each time you login to the IdP, you are authenticated as owning that WebID. Identity Providers are also often Pod Providers but it does not matter if you get your WebID from one provider and store your Pod data with a different provider.
@@ -97,7 +103,7 @@ An abbreviation for **OpenIDConnect** an identity/authentication system often (b
 ### JWT
 a **JSON Web Token** - a token passed by applications using OIDC and other authentication/authorization systems.
 
-## Core Concept: Center the Person
+## Core Concept: Center the Person & the Organization
 
 ### Profile
 A Solid Profile is set of statements which you can create to describe yourself, your social connections, and pointers to where you store various kinds of data.  As with all Solid resources, you can set restrictions on who, if anyone, is allowed to see these statements.  The statements may occur in a single document, or be spread over one or more other documents as described below.  Organizations may have profiles as well as individuals.

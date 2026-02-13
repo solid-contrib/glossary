@@ -7,13 +7,13 @@ The audience of this glossary is the general public - people who do not necessar
 The Solid Project is a large, diverse, and welcoming community of visionaries, techies, and people who, regardless of their skill level, believe in the goals of Solid. We are building the Solidverse together and that includes you! The project is led by **Sir Tim Berners-Lee** (online handle **timbl**), the creator of the web, the visionary founder of the Solid Project.
 
 ### ODI
-The [**Open Data Institute**](), a nongovernmental organization that supports open data and is the stewarding organization for Solid.  In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](https://solidcommunity.net/), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
+The [**Open Data Institute**](https://theodi.org/), a nongovernmental organization that supports open data and is the stewarding organization for Solid.  In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](https://solidcommunity.net/), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
 
 ### CG
-The [**Solid Community Group**](), a W3C community group oriented toward producing and reviewing technical reports including draft specifications. All are invited to regular virtual meetings.
+The [**Solid Community Group**](https://www.w3.org/groups/cg/solid/), a W3C community group oriented toward producing and reviewing technical reports including draft specifications. All are invited to regular virtual meetings.
 
 ### LWS
-The [**Linked Web Storage Group**](), a W3C working group preparing a standards track specification for Solid.
+The [**Linked Web Storage Group**](https://www.w3.org/groups/wg/lws/), a W3C working group preparing a standards track specification for Solid.
 
 ### PG
 The [**Solid Practitioners Group**](https://github.com/solid-contrib/practitioners), an open community hub for anyone interested in building Solid applications and services for end users and communities. All are invited to regular virtual meetings.
@@ -27,7 +27,7 @@ members of the Solid community should be free from harassment, abuse, and unwelc
 A **repository**, a place where code, documents, and discussions can be found. Often, but not exclusively on [**github.com**](https://github.com/solid/).
 
 ### Issue
-An Issue is a way that anyone can suggest changes to any document or piece of code. Anyone of any skill level can submit an Issue and thus contribute to the written record of and the source code for the Solidverse. It could be about a bug, a feature request, a documentation change, or a use case description of a real world need that could be satisfied using Solid. If you have a suggestion and don't know how to create an Issue, just ask in the [chatroom]() or [forum]().
+An Issue is a way that anyone can suggest changes to any document or piece of code. Anyone of any skill level can submit an Issue and thus contribute to the written record of and the source code for the Solidverse. It could be about a bug, a feature request, a documentation change, or a use case description of a real world need that could be satisfied using Solid. If you have a suggestion and don't know how to create an Issue, just ask in the [chatroom](https://matrix.to/#/#solid-practitioners:matrix.org) or [forum](https://forum.solidproject.org/).
 
 ### PR
 A **Pull Request** is a way of suggesting an edit to a document or piece of code. An *issue* makes suggestions about or comments on or questions about the document or code but a *PR* suggests specific changes in the document (for example, a code correction or a new paragraph for documentations).
@@ -159,7 +159,7 @@ The Semantic Web is a web based on Linked Data - meaningful relationships betwee
 This is a key pattern in the Semantic Web. Since data is linked to other data using meaningful links, you can follow links of interest to you.
 
 ### Ontology
-A vocabulary of RDF terms. This includes general vocabularies like [schema.org](http://schema.org) and domain-specific ontologies like [foaf]().
+A vocabulary of RDF terms. This includes general vocabularies like [schema.org](http://schema.org) and domain-specific ontologies like [foaf](https://xmlns.com/foaf/spec/).
 
 ### Triple
 A Triple is an RDF statement. RDF statements take the form of short sentences asserting that thingA is in some relationship with thingB. Each statement (triple) has three parts : a **subject** (thingA), a **predicate** (the relationship), and an **object** (thingB).
@@ -189,16 +189,16 @@ a software **application**, also referred to as **client**. It can be a web-base
 A document that uniquely identifies an application (client). It has its own WebID.
 
 ### Spec
-A [**Specification**](), a formal description of a technical protocol.
+A [**Specification**](https://github.com/solid/specification), a formal description of a technical protocol.
 
 ### Client to Client Specification
 A specification that defines data models an application can use to write data in a way that other applications can read it.
 
 ### TR
-A [**Technical Report**]() or draft specification.
+A [**Technical Report**](https://solidproject.org/TR/) or draft specification.
 
 ### Shape
-A model specifying constraints on data, for example, that a Person has exactly one age at any given time. Shapes are commonly written using technologies like [SHACL](), [SHACLC](), and [SHEX]().
+A model specifying constraints on data, for example, that a Person has exactly one age at any given time. Shapes are commonly written using technologies like [SHACL](https://w3c.github.io/shacl/shacl-compact-syntax/), [SHACLC](), and [SHEX](https://github.com/shexSpec/shex/wiki/ShEx).
 
 ## Core Concept: Consent Based Computing
 Solid provides methods to give or deny consent for access to your data.  You may give or deny permission to individuals, groups of people, or an organization.

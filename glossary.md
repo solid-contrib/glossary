@@ -66,7 +66,7 @@ The [**Community Solid Server**](https://github.com/CommunitySolidServer/Communi
 [Pivot](https://github.com/solid-contrib/pivot) is a flavor of CSS used as the Server for [solidcommunity.net](https://solidcommunity.net), a free Pod and Identity Provider.
 
 ### ESS
-The [**Enterprise Solid Server**]((https://www.inrupt.com/products/enterprise-wallet-infrastructure) is a combined Storage and Identity Server. It is provided by Inrupt.
+The [**Enterprise Solid Server**](https://www.inrupt.com/products/enterprise-wallet-infrastructure) is a combined Storage and Identity Server. It is provided by Inrupt.
 
 ### NSS
 The [**Node Solid Server**](https://github.com/nodeSolidServer/node-solid-server) is an open source combined Storage and Identity Server.

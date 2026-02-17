@@ -30,22 +30,25 @@ function md2rdfa(markdownString,conceptScheme,cssPath){
   prefix="skos: http://www.w3.org/2004/02/skos/core#"
 ><head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="${cssPath}">
+  <title>${head}</title>
 </head>
 <body typeof="skos:ConceptScheme" about="#${conceptScheme}" name="#${conceptScheme}">
 
-  <section aria-label="page heading" aria-labeledby="page-title" aria-describedby="page-description">
+  <section aria-label="page heading" aria-labelledby="page-title" aria-describedby="page-description">
     <h1 id="page-title" property="skos:prefLabel">${head}</h1>
     <p id ="page-description" property="skos:note">${body}</p>
   </section>
-  <dl id="definitions" aria-label="definitions" aria-role="list" inlist="">
+  <dl id="definitions" aria-label="definitions" role="list" inlist="">
     `;
   }
   function getTopConcept(head,body,visited){
     const url = label2url(head);
     let dt = "";
     if(visited) dt = `
-    </dl>
+      </dl>
+    </dd>
     `;
     dt += `
     <dt
@@ -61,7 +64,8 @@ function md2rdfa(markdownString,conceptScheme,cssPath){
       `;
     }
     dt += `
-    <dl inlist="" area-role="list" rel="skos:narrower" resource="#${url}">
+    <dd>
+      <dl inlist="" role="list" rel="skos:narrower" resource="#${url}">
     `;
      return dt;
 
@@ -70,21 +74,22 @@ function md2rdfa(markdownString,conceptScheme,cssPath){
     const url = label2url(head);
     if(head==='license'){
       return `
-    </dl>
+      </dl>
+    </dd>
   </dl>
   <section id="license" aria-label="license">${body}</section>
        `;
     }
     return `
-    <dt
-      about="#${url}"
-      typeof="skos:Concept"
-      rel="skos:broader" resource="#${headerUrl}"
-      property="skos:prefLabel"
-    ><dfn id="${url}">${head}</dfn></dt>
-    <dd aria-labelledby="${url}">
-      ${body}
-    </dd>
+        <dt
+          about="#${url}"
+          typeof="skos:Concept"
+          rel="skos:broader" resource="#${headerUrl}"
+          property="skos:prefLabel"
+        ><dfn id="${url}">${head}</dfn></dt>
+        <dd aria-labelledby="${url}">
+          ${body}
+        </dd>
       `;
       // can't include this or it clobber skos:broader
       // rel="skos:inScheme" resource="#${conceptScheme}"

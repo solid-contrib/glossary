@@ -3,7 +3,7 @@ const {saveFile,loadFile,md2rdfa} = require('./glossary-utils.js');
 const conceptScheme = 'SolidCoreConcepts';
 const mdPath        = './glossary.md';
 const cssPath       = './glossary.css';
-const rdfaPath      = './glossary';
+const rdfaPath      = './index.html';
 
 ( async ()=> {
     const markdownString = await loadFile( mdPath );
@@ -11,7 +11,6 @@ const rdfaPath      = './glossary';
     if(rdfaString){
        console.log(rdfaString)
        await saveFile( rdfaPath, rdfaString );
-       await saveFile( './index.html', rdfaString );
     }
 })();
 

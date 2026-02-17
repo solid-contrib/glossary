@@ -31,6 +31,7 @@ function md2rdfa(markdownString,conceptScheme,cssPath){
 ><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="${cssPath}">
   <title>${head}</title>
 </head>

@@ -1,10 +1,20 @@
 :root {
+  color-scheme: light dark;
+
   --description-indent: 2rem;
   --h1-size: 150%;
   --section-term-size: 130%;
   --section-term-margin: 1rem 0;
   --term-size: 110%;
   --term-margin: 0;
+
+  --link-color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --link-color: #6db3f2;
+  }
 }
 
 html {
@@ -21,7 +31,7 @@ body {
 
 a {
   text-decoration: none;
-  color: blue !important;
+  color: var(--link-color);
 }
 
 [property='skos:prefLabel'] {

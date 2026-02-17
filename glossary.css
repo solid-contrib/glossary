@@ -6,16 +6,16 @@ body {
 }
 h1 { font-size:150% !important; }
 h2 { font-size:130% !important; text-decoration:underline;}
-a {text-decoration:none; color: blue !important; }
+a { text-decoration:none; color: blue !important; }
 
-*[property="skos:inScheme"],
-*[property="skos:broader"],
-*[property="skos:isTopConceptOf"]
+[property="skos:inScheme"],
+[property="skos:broader"],
+[property="skos:isTopConceptOf"]
     { display:none }
-*[property="skos:prefLabel"] { font-weight:bold; font-size:110%; }
-*[property="skos:note"],p { padding-left:2rem; }
+[property="skos:prefLabel"] { font-weight:bold; font-size:110%; }
+[property="skos:note"],p { padding-left:2rem; }
 
-*[rel="skos:isTopConceptOf"] dfn {
+[rel="skos:isTopConceptOf"] dfn {
   display:block;
   margin-top:1rem;
   margin-bottom:1rem;
@@ -25,3 +25,25 @@ a {text-decoration:none; color: blue !important; }
 dd { margin-bottom:1rem; }
 
 #license {font-style:italic;}
+
+/* mobile view */
+@media (max-width: 600px) {
+  body {
+    margin: 1rem;
+    line-height: 1.4;
+  }
+
+  /* smaller fonts */
+  h1 { font-size:140% !important; }
+  h2 { font-size:120% !important; }
+  [rel="skos:isTopConceptOf"] dfn { font-size: 110%; }
+
+  /* instead of indentation, give definitions a small margin */
+  [property="skos:prefLabel"] { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+
+  /* remove left indentation to better suit narrow screen */
+  [property="skos:note"], p, dd {
+    padding-left: 0;
+    margin-left: 0;
+  }
+}

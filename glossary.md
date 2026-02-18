@@ -1,13 +1,13 @@
 # Glossary of Solid Core Concepts, Terms, & Abbreviations
 The audience of this glossary is the general public - people who do not necessarily have a technical background or previous experience with Solid. See the [Solid Specifications](https://solidproject.org/TR/) for definitions aimed at a technical audience. This is a work in progress. Please visit [the glossary repository](https://github.com/solid-contrib/glossary/) to suggest changes and additions. *Note: many of the links are missing, help completing them would be much appreciated :-).* 
 
-## Core Concept : Community Involvement
+## Core Concept: Community Involvement
 
 ### The Solid Project
 The Solid Project is a large, diverse, and welcoming community of visionaries, techies, and people who, regardless of their skill level, believe in the goals of Solid. We are building the Solidverse together and that includes you! The project is led by **Sir Tim Berners-Lee** (online handle **timbl**), the creator of the web, the visionary founder of the Solid Project.
 
 ### ODI
-The [**Open Data Institute**](https://theodi.org/), a nongovernmental organization that supports open data and is the stewarding organization for Solid.  In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](https://solidcommunity.net/), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
+The [**Open Data Institute**](https://theodi.org/), a nongovernmental organization that supports open data and is the stewarding organization for Solid. In conjunction with the broader Solid community, the Institute provides a [website](), a [forum](), [chatrooms](), a [catalog of resources]() and [solidcommunity.net](https://solidcommunity.net/), a free Pod and Identity provider. ODI also supports Solid in other ways including support for the core infrastructure and for the CG, PG, and LWS (see below).
 
 ### CG
 The [**Solid Community Group**](https://www.w3.org/groups/cg/solid/), a W3C community group oriented toward producing and reviewing technical reports including draft specifications. All are invited to regular virtual meetings.
@@ -19,7 +19,7 @@ The [**Linked Web Storage Group**](https://www.w3.org/groups/wg/lws/), a W3C wor
 The [**Solid Practitioners Group**](https://github.com/solid-contrib/practitioners), an open community hub for anyone interested in building Solid applications and services for end users and communities. All are invited to regular virtual meetings.
 
 ### Code of Conduct
-members of the Solid community should be free from harassment, abuse, and unwelcoming behaviors.  If you are subject of or witness to such behaviors, please report the incident to the [ODI ombudsman]().
+Members of the Solid community should be free from harassment, abuse, and unwelcoming behaviors. If you are subject of or witness to such behaviors, please report the incident to the [ODI ombudsman]().
 
 ## Core Concept: Community Contributions to Code & Documentation
 
@@ -39,16 +39,16 @@ A **Pull Request** is a way of suggesting an edit to a document or piece of code
 Solid gives you control of your personal data by letting you store it where you choose; by enforcing your ability to manage who accesses it; and by not requiring use of large centralized services that have their own data agendas. At the center of Solid is your Pod.
 
 ### Pod
-A data storage space ontrolled by a person, group, or organization. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. The term "Pod" is an informal term for what is formally called a **Solid storage**, see below.  Originally the acronym PODS was used - Personal Online Data Store, but the acronym has been dropped as Pods can be used by groups and organizations as well as by persons.
+A data storage space controlled by a person, group, or organization. When logged in, you can modify the data and make any part of it private, public, or available to specific audiences. The term "Pod" is an informal term for what is formally called a **Solid storage**, see below. Originally the acronym PODS was used - Personal Online Data Store, but the acronym has been dropped as Pods can be used by groups and organizations as well as by persons.
 
 ### Pod Provider
 A host service that provides you Pod storage space and maintains Solid Server software that enforces the privacy rules you have defined. You are free to switch pod providers at any time.
 
 ### Self Hosting
-You can download free open source software to host a pod on your own computer.  It can be a great way to learn about Solid and if you have a 24/7 internet connection, can be a way to completely control your data locally and make it available as you choose.
+You can download free open source software to host a pod on your own computer. It can be a great way to learn about Solid and if you have a 24/7 internet connection, can be a way to completely control your data locally and make it available as you choose.
 
 ### Container
-In Solid, your data is stored in Containers which can be folders that contains files, or database tables that contains records, or storage systems. Whatever the storage, Containers can be accessed with URLs that end in a slash, for example "https://example.com/foo/bar/".
+In Solid, your data is stored in Containers which can be folders that contain files, or database tables that contain records, or storage systems. Whatever the storage, Containers can be accessed with URLs that end in a slash, for example "https://example.com/foo/bar/".
 
 ### LDP
 **Linked Data Platform** - the basis for the storage structure of containers used in Solid.
@@ -80,7 +80,7 @@ The [**PHP Solid Server**](https://github.com/pdsinterop/php-solid-server) is an
 **Single Sign On** means that logging in once gains you access to everywhere in the Solidverse that you have permission to go.
 
 ### WebID
-A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owners preferences.  Two common, though definitely not exclusive ways of forming WebID URLS are by subdomain - https://YOU.example.org/... or by suffix - https://example.org/YOU/ ...
+A WebID is a universal identifier that uniquely identifies you wherever you go. After getting a WebID, you can login once and have that login and WebID recognized anywhere that uses Solid. It's easy to have more than one WebID and they are anonymous by default. A WebID is always a URL that points to a Profile describing the owner and providing pointers to the owner's preferences. Two common, though definitely not exclusive ways of forming WebID URLS are by subdomain - https://YOU.example.org/... or by suffix - https://example.org/YOU/ ...
 
 ### IdP
 An **Identity Provider** is a host service that provides Solid identity authentication. When you register with an IdP, the IdP assigns you a WebID. Each time you login to the IdP, you are authenticated as owning that WebID. Identity Providers are also often Pod Providers but it does not matter if you get your WebID from one provider and store your Pod data with a different provider.
@@ -89,7 +89,7 @@ An **Identity Provider** is a host service that provides Solid identity authenti
 The software an Identity Provider uses to provision and validate WebID identities.
 
 ### Authn
-Short for **authentication**.  An application must first authenticate itself - prove that it is operated by who it claims to be operated by.  Then it can proceed to authorization (see Authz below) - check that the operator has the appropriate permissions.
+Short for **authentication**. An application must first authenticate itself - prove that it is operated by who it claims to be operated by. Then it can proceed to authorization (see Authz below) - check that the operator has the appropriate permissions.
 
 ### OIDC
 An abbreviation for **OpenIDConnect** an identity/authentication system often (but not exclusively) used by Solid Identity Providers to validate a person's identity.
@@ -106,10 +106,10 @@ a **JSON Web Token** - a token passed by applications using OIDC and other authe
 ## Core Concept: Center the Person & the Organization
 
 ### Profile
-A Solid Profile is set of statements which you can create to describe yourself, your social connections, and pointers to where you store various kinds of data.  As with all Solid resources, you can set restrictions on who, if anyone, is allowed to see these statements.  The statements may occur in a single document, or be spread over one or more other documents as described below.  Organizations may have profiles as well as individuals.
+A Solid Profile is set of statements which you can create to describe yourself, your social connections, and pointers to where you store various kinds of data. As with all Solid resources, you can set restrictions on who, if anyone, is allowed to see these statements. The statements may occur in a single document, or be spread over one or more other documents as described below. Organizations may have profiles as well as individuals.
 
 ### WebID Document
-This is the document or graph located at your WebID URL.  It is the starting point for discovering what is in your pod(s).
+This is the document or graph located at your WebID URL. It is the starting point for discovering what is in your pod(s).
 
 ### Extended Profile Document
 If you point from your WebID Document document to other documents, you can group statements either by topics (e.g. links to people you know) or by audience (e.g. everyone who should have access to your private phone number).
@@ -121,7 +121,7 @@ This is a private Extended Profile Document meant to be used by apps operated by
 This is a kind of Extended Profile Document that stores links to specific kinds of data on your Pod e.g. photos, or bookmarks.
 
 ### Private Type Index
-This is like the Public Type Index, but only apps operated by you can access it.  You can use a photo app to find your private photos by looking in this index, but no one else can.
+This is like the Public Type Index, but only apps operated by you can access it. You can use a photo app to find your private photos by looking in this index, but no one else can.
 
 ## Core Concept: Semantic Linking
 
@@ -135,7 +135,7 @@ Terse RDF Triple Language, a dialect of RDF.
 JSON for Linked Data, a dialect of RDF.
 
 ### RDFa
-(RDF in HTML attributes),  a dialect of RDF.  The RDF is stored in the HTML attributes.  This means that a human can read the HTML and a machine can read the RDF.  Using content negotiation (see below), we can get turtle or JSON-LD from an HTML page using RDFa.
+(RDF in HTML attributes), a dialect of RDF. The RDF is stored in the HTML attributes. This means that a human can read the HTML and a machine can read the RDF. Using content negotiation (see below), we can get turtle or JSON-LD from an HTML page using RDFa.
 
 ### N3
 a dialect of RDF.
@@ -147,10 +147,10 @@ The Web Ontology Language is a language to create RDF vocabularies.
 SPARQL Protocol and RDF Query Language, is a language similar to SQL to query RDF data sources. It is pronounced "sparkle".
 
 ### Content Negotiation
-The ability of an application to specify what RDF dialect to get data in.  Solid specifies that at least Turtle and JSON-LD be available by default.  So regardless of what RDF dialect is used to store the data, a user can specify they want it in one of the default dialects and it will be converted before delivery.
+The ability of an application to specify what RDF dialect to get data in. Solid specifies that at least Turtle and JSON-LD be available by default. So regardless of what RDF dialect is used to store the data, a user can specify they want it in one of the default dialects and it will be converted before delivery.
 
 ### Linked Data
-Linked Data is data stored as RDF.  This provides the basis for interoperability and reuse of data since Linked Data can be read by any RDF-aware application.
+Linked Data is data stored as RDF. This provides the basis for interoperability and reuse of data since Linked Data can be read by any RDF-aware application.
 
 ### Semantic Web
 The Semantic Web is a web based on Linked Data - meaningful relationships between resources. The link between the pages "The Color Purple" and "Alice Walker" is not just any link, it is an authorship link that holds meaning.
@@ -165,7 +165,7 @@ A vocabulary of RDF terms. This includes general vocabularies like [schema.org](
 A Triple is an RDF statement. RDF statements take the form of short sentences asserting that thingA is in some relationship with thingB. Each statement (triple) has three parts : a **subject** (thingA), a **predicate** (the relationship), and an **object** (thingB).
 
 ### Graph
-a **knowledge graph** is a set of RDF statements.  This can mean the document which contains the statements or statements pulled from a database or other storage.
+a **knowledge graph** is a set of RDF statements. This can mean the document which contains the statements or statements pulled from a database or other storage.
 
 ### Quad
 A Quad is an RDF statement that includes the name of the graph or document the statement is derived from.
@@ -180,7 +180,7 @@ the file extension for Turtle files.
 Solid aims to reuse data. Things you gather with one app might be useful in a different app. To gain the flexibility to share data across apps, Solid supports standard ways to storing and finding data that don't lock you in to a single vendor's apps and methods.
 
 ### Agent
-A person, group, organization, or software application that can perform actions, including requesting consent to access your data.  A person, group, or organization may also be referred to as a **social agent**.
+A person, group, organization, or software application that can perform actions, including requesting consent to access your data. A person, group, or organization may also be referred to as a **social agent**.
 
 ### App
 a software **application**, also referred to as **client**. It can be a web-based, server-based, command-line/CLI or native application. In Solid, apps need your consent to access your data and can have their own WebID (see Client Identifier Document).
@@ -201,13 +201,13 @@ A [**Technical Report**](https://solidproject.org/TR/) or draft specification.
 A model specifying constraints on data, for example, that a Person has exactly one age at any given time. Shapes are commonly written using technologies like [SHACL](https://w3c.github.io/shacl/shacl-compact-syntax/), [SHACLC](), and [SHEX](https://github.com/shexSpec/shex/wiki/ShEx).
 
 ## Core Concept: Consent Based Computing
-Solid provides methods to give or deny consent for access to your data.  You may give or deny permission to individuals, groups of people, or an organization.
+Solid provides methods to give or deny consent for access to your data. You may give or deny permission to individuals, groups of people, or an organization.
 
 ### WAC
 **Web Access Control** is the original simple access control method for Solid.
 
 ### ACP
-**Access Control Policy** is a newer more complex and more robust n access control mechanism.
+**Access Control Policy** is a newer more complex and more robust access control mechanism.
 
 ### ACL
 Pronounced "ackle", stands for **Access Control List**, a list of rules used in WAC to control who accesses your data.

@@ -1,49 +1,78 @@
+:root {
+  --description-indent: 2rem;
+  --h1-size: 150%;
+  --section-term-size: 130%;
+  --section-term-margin: 1rem 0;
+  --term-size: 110%;
+  --term-margin: 0;
+}
+
+html {
+  margin: 0 1rem; /* ensure margins on all screens */
+}
+
 body {
-    font-family:Arial,Helvetica;
-    font-size:1rem;
-    max-width:80ch;
-    margin:auto;
+  line-height: 1.4;
+  font-family: Arial, Helvetica;
+  font-size: 1rem;
+  max-width: 80ch;
+  margin: auto;
 }
-h1 { font-size:150% !important; }
-h2 { font-size:130% !important; text-decoration:underline;}
-a { text-decoration:none; color: blue !important; }
 
-[property="skos:inScheme"],
-[property="skos:broader"],
-[property="skos:isTopConceptOf"]
-    { display:none }
-[property="skos:prefLabel"] { font-weight:bold; font-size:110%; }
-[property="skos:note"],p { padding-left:2rem; }
-
-[rel="skos:isTopConceptOf"] dfn {
-  display:block;
-  margin-top:1rem;
-  margin-bottom:1rem;
-  font-size:120%;
-  text-decoration:underline;
+a {
+  text-decoration: none;
+  color: blue !important;
 }
-dd { margin-bottom:1rem; }
 
-#license {font-style:italic;}
+[property='skos:prefLabel'] {
+  font-weight: bold;
+}
+
+/* main header */
+[property='skos:prefLabel']:not([typeof='skos:Concept']) {
+  font-size: var(--h1-size);
+}
+
+/* section header */
+[property='skos:prefLabel'][typeof='skos:Concept'][rel='skos:isTopConceptOf'] {
+  margin: var(--section-term-margin);
+  font-size: var(--section-term-size);
+  text-decoration: underline;
+}
+
+/* concept definition */
+[property='skos:prefLabel'][typeof='skos:Concept']:not(
+    [rel='skos:isTopConceptOf']
+  ) {
+  font-size: var(--term-size);
+  margin: var(--term-margin);
+}
+
+dd {
+  margin-bottom: 1rem;
+  /* reset browser default */
+  margin-left: 0;
+}
+
+/* indent note, and concept description */
+[property='skos:note'],
+[property='skos:prefLabel']:not([rel='skos:isTopConceptOf']) + dd {
+  margin-left: var(--description-indent);
+}
+
+#license {
+  font-style: italic;
+}
 
 /* mobile view */
 @media (max-width: 600px) {
-  body {
-    margin: 1rem;
-    line-height: 1.4;
-  }
+  :root {
+    /* remove indentation to better suit narrow screen */
+    --description-indent: 0;
+    --term-margin: 0.25rem 0;
 
-  /* smaller fonts */
-  h1 { font-size:140% !important; }
-  h2 { font-size:120% !important; }
-  [rel="skos:isTopConceptOf"] dfn { font-size: 110%; }
-
-  /* instead of indentation, give definitions a small margin */
-  [property="skos:prefLabel"] { margin-top: 0.25rem; margin-bottom: 0.25rem; }
-
-  /* remove left indentation to better suit narrow screen */
-  [property="skos:note"], p, dd {
-    padding-left: 0;
-    margin-left: 0;
+    /* decrease header sizes */
+    --h1-size: 140%;
+    --section-term-size: 120%;
   }
 }

@@ -87,7 +87,7 @@ function md2rdfa(markdownString,conceptScheme,cssPath){
           typeof="skos:Concept"
           rel="skos:broader" resource="#${headerUrl}"
           property="skos:prefLabel"
-        ><dfn id="${url}">${head}</dfn></dt>
+        ><dfn id="${url}"><a href="#${url}">${head}</a></dfn></dt>
         <dd aria-labelledby="${url}">
           ${body}
         </dd>

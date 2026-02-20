@@ -86,3 +86,26 @@ dd {
     --section-term-size: 120%;
   }
 }
+
+/* definition fragment links */
+
+dfn {
+  position: relative;
+}
+
+dfn a {
+  color: inherit;
+}
+
+dfn a::before {
+  content: '#';
+  position: absolute;
+  right: 100%;
+  opacity: 0;
+  padding-right: 0.25rem;
+  color: var(--link-color);
+}
+
+dfn a:hover::before {
+  opacity: 1;
+}
